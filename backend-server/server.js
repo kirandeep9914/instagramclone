@@ -13,7 +13,7 @@ dotenv.config();
 const connectDB = require('../backend-server/mongoose');
 connectDB();
 
-const _dirname = path.resolve()
+const __dirname = path.resolve()
 
 // Initialize Express App
 const app = express();
@@ -39,9 +39,9 @@ app.use('/api/posts', postRoutes);
 
 
 
-app.use(express.static(path.join(_dirname,"/frontend/my-react-app/dist")));
+app.use(express.static(path.join(__dirname,"/frontend/my-react-app/dist")));
 app.get("*",(_,res)=>{
-  res.sendFile(path.resolve(_dirname,"frontend/my-react-app","dist","index.html"))
+  res.sendFile(path.resolve(__dirname,"frontend/my-react-app","dist","index.html"))
 })
 // Start the Server
 const PORT = process.env.PORT || 5000;
