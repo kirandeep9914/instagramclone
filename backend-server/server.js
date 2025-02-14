@@ -13,7 +13,7 @@ dotenv.config();
 const connectDB = require('../backend-server/mongoose');
 connectDB();
 
-const __dirname = path.resolve()
+const _dirname = path.resolve()
 
 // Initialize Express App
 const app = express();
@@ -21,7 +21,7 @@ const app = express();
 // Allow requests from specific origins
 app.use(
     cors({
-      origin: "http://localhost:5174", // Replace with your frontend URL
+      origin: "http://localhost:5173", // Replace with your frontend URL
       methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
       credentials: true, // Allow cookies if needed
     })
@@ -39,9 +39,9 @@ app.use('/api/posts', postRoutes);
 
 
 
-app.use(express.static(path.join(__dirname,"/frontend/my-react-app/dist")));
+app.use(express.static(path.join(_dirname,"/frontend/my-react-app/dist")));
 app.get("*",(_,res)=>{
-  res.sendFile(path.resolve(__dirname,"frontend/my-react-app","dist","index.html"))
+  res.sendFile(path.resolve(_dirname,"frontend/my-react-app","dist","index.html"))
 })
 // Start the Server
 const PORT = process.env.PORT || 5000;
