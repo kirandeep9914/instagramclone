@@ -26,11 +26,14 @@ const EditProfile = () => {
     }
 
     try {
+      const token = localStorage.getItem("token"); // Ensure token is stored
+      console.log(token)
       // Replace with your backend API URL
-      const response = await axios.put('https://instagramclone-20.onrender.com/edit', formData, {
+      const response = await axios.put('https://instagramclone-21.onrender.com/edit', formData, {
         headers: {
         },
         withCredentials: true, // Include credentials (cookies/tokens) with the request
+        Authorization: `Bearer ${token}`,
       });
       // Handle the response (e.g., show success message)
       console.log('Post created:', response.data);

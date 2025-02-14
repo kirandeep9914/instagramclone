@@ -40,13 +40,9 @@ const Post = ({post}) => {
 
   const handlelikeanddislike = async() =>{
     try {
-    const token = user.token;
-    if (!token) {
-      console.log("Authentication token is missing. Please log in again.");
-      return;
-    }
+      const token = localStorage.getItem("token"); // Ensure token is stored
       console.log(token)
-      const response = await axios.put(`https://instagramclone-20.onrender.com/${post._id}/like`,{},
+      const response = await axios.put(`https://instagramclone-21.onrender.com/${post._id}/like`,{},
        {  
          headers: {
           Authorization: `Bearer ${token}`, // Include the token in the headers
@@ -81,8 +77,9 @@ const Post = ({post}) => {
   const handlefollowandunfollow = async() =>{
     try {
       const userToFollowId = post.author._id; // ID of the user to follow/unfollow
-      const token = user.token;
-      const response = await axios.put(`https://instagramclone-20.onrender.com/follow/${userToFollowId}`,{},
+      const token = localStorage.getItem("token"); // Ensure token is stored
+      console.log(token)
+      const response = await axios.put(`https://instagramclone-21.onrender.com/follow/${userToFollowId}`,{},
        {  
         headers: {
           'Content-Type': 'application/json',
@@ -103,9 +100,12 @@ const Post = ({post}) => {
   }
 const handleDelete = async () => {
   try {
-    const response = await axios.delete(`https://instagramclone-20.onrender.com/delete/${post._id}`, {
+    const token = localStorage.getItem("token"); // Ensure token is stored
+    console.log(token)
+    const response = await axios.delete(`https://instagramclone-21.onrender.com/delete/${post._id}`, {
       headers: {
         'Content-Type': 'application/json', // Ensure the request has the correct content type
+        Authorization: `Bearer ${token}`,
       },
       withCredentials: true, // Include cookies or session data
     });
@@ -126,9 +126,12 @@ const handlecomment = async(e) =>{
   e.preventDefault();
   console.log(text)
   try {
-    const response = await axios.post(`https://instagramclone-20.onrender.com/comment/${post._id}`,{text},{
+    const token = localStorage.getItem("token"); // Ensure token is stored
+    console.log(token)
+    const response = await axios.post(`https://instagramclone-21.onrender.com/comment/${post._id}`,{text},{
       headers: {
         'Content-Type': 'application/json', // If you need to specify the content type
+        Authorization: `Bearer ${token}`,
       },
       withCredentials: true, // Include cookies with cross-origin requests
     });

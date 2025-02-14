@@ -11,12 +11,15 @@ const singleUser = () => {
 
     useEffect(() => {
       const getProfile = async () => {
+        const token = localStorage.getItem("token"); // Ensure token is stored
+        console.log(token)
         try {
           const response = await axios.get(
-            `https://instagramclone-20.onrender.com/getProfile/${userId}`,
+            `https://instagramclone-21.onrender.com/getProfile/${userId}`,
             {
               headers: {
                 "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`,
               },
               withCredentials: true, // Include cookies or tokens
             }
