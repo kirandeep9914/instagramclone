@@ -1,4 +1,20 @@
-
+@media (max-width:450px){
+  .post{
+    width: 800px;
+    font-size: 50px; 
+    height: 11    00px; 
+    margin-right: 30px;
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid;
+  }
+  .right{
+    display: none;
+  }
+  .sidebar{
+    display: none;
+  }
+}
 /* this section is for the post section */
 @media (max-width: 600px) {
     .post{
@@ -46,6 +62,12 @@
         display: flex;
         flex-direction: column;
         margin-right: 30px;
+    }
+    .right{
+      display: none;
+    }
+    .sidebar{
+      display: none;
     }
   }
   
@@ -96,6 +118,9 @@
          
       }
       .right{
+        display: none;
+      }
+      .sidebar{
         display: none;
       }
       
