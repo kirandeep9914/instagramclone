@@ -24,12 +24,9 @@ const Register = () => {
     e.preventDefault();
     console.log("Form Data:", formData);
     try {
-      const token = localStorage.getItem("token"); // Ensure token is stored
-      console.log(token)
         const response = await axios.post("https://instagramclone-21.onrender.com/login",formData,{
             headers: {
                 "Content-Type": "application/json",
-                Authorization: `Bearer ${token}`,
               },
               withCredentials: true, // Include cookies or tokens
         });
