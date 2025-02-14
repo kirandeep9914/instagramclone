@@ -17,13 +17,19 @@ const _dirname = path.resolve()
 
 // Initialize Express App
 const app = express();
-
+const allowedOrigins = [
+  "http://localhost:5173",  // Local frontend
+  "https://instagramclone-17.onrender.com",  // Previous deployment
+  "https://instagramclone-18.onrender.com",  // Possible new deployment
+  "https://instagramclone-*.onrender.com"  // Future subdomains
+];
 // Allow requests from specific origins
 app.use(
     cors({
-      origin: "http://localhost:5173", // Replace with your frontend URL
+      origin: allowedOrigins, 
       methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
       credentials: true, // Allow cookies if needed
+      allowedHeaders: "Content-Type,Authorization"
     })
   );
 
