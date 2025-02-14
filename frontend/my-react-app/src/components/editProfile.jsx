@@ -27,7 +27,7 @@ const EditProfile = () => {
 
     try {
       // Replace with your backend API URL
-      const response = await axios.put('https://instagramclone-19.onrender.com/edit', formData, {
+      const response = await axios.put('https://instagramclone-20.onrender.com/edit', formData, {
         headers: {
         },
         withCredentials: true, // Include credentials (cookies/tokens) with the request

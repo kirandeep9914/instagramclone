@@ -9,7 +9,7 @@ const GetPost= () => {
       const getpost = async () => {
         try {
           const response = await axios.get(
-            " https://instagramclone-19.onrender.com/getallpost",
+            " https://instagramclone-20.onrender.com/getallpost",
             {
               headers: {
                 "Content-Type": "application/json",

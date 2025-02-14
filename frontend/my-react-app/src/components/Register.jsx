@@ -22,7 +22,7 @@ const Register = () => {
     e.preventDefault();
     console.log("Form Data:", formData);
     try {
-        const response = await axios.post(" https://instagramclone-19.onrender.com/register",formData,{
+        const response = await axios.post(" https://instagramclone-20.onrender.com/register",formData,{
             headers: {
                 "Content-Type": "application/json",
               },

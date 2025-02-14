@@ -46,7 +46,7 @@ const Post = ({post}) => {
       return;
     }
       console.log(token)
-      const response = await axios.put(`https://instagramclone-19.onrender.com/${post._id}/like`,{},
+      const response = await axios.put(`https://instagramclone-20.onrender.com/${post._id}/like`,{},
        {  
          headers: {
           Authorization: `Bearer ${token}`, // Include the token in the headers
@@ -82,7 +82,7 @@ const Post = ({post}) => {
     try {
       const userToFollowId = post.author._id; // ID of the user to follow/unfollow
       const token = user.token;
-      const response = await axios.put(`https://instagramclone-19.onrender.com/follow/${userToFollowId}`,{},
+      const response = await axios.put(`https://instagramclone-20.onrender.com/follow/${userToFollowId}`,{},
        {  
         headers: {
           'Content-Type': 'application/json',
@@ -103,7 +103,7 @@ const Post = ({post}) => {
   }
 const handleDelete = async () => {
   try {
-    const response = await axios.delete(`https://instagramclone-19.onrender.com/delete/${post._id}`, {
+    const response = await axios.delete(`https://instagramclone-20.onrender.com/delete/${post._id}`, {
       headers: {
         'Content-Type': 'application/json', // Ensure the request has the correct content type
       },
@@ -126,7 +126,7 @@ const handlecomment = async(e) =>{
   e.preventDefault();
   console.log(text)
   try {
-    const response = await axios.post(`https://instagramclone-19.onrender.com/comment/${post._id}`,{text},{
+    const response = await axios.post(`https://instagramclone-20.onrender.com/comment/${post._id}`,{text},{
       headers: {
         'Content-Type': 'application/json', // If you need to specify the content type
       },
