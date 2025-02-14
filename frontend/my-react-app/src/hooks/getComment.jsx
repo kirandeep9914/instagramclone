@@ -9,7 +9,7 @@ const getComment = () => {
 useEffect(() => {
     const getComments = async()=>{
         try {
-          const response = await axios.get("http://localhost:5000/api/posts/getallcomments", {
+          const response = await axios.get("https://instagramclone-19.onrender.com/getallcomments", {
             headers: {
               'Content-Type': 'application/json', // Example header
             },

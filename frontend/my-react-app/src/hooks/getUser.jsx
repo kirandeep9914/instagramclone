@@ -9,7 +9,7 @@ const GetUser = () => {
       const getUser = async () => {
         try {
           const response = await axios.get(
-            "http://localhost:5000/api/users/suggesteduser",
+            "https://instagramclone-19.onrender.com/suggesteduser",
             {
               headers: {
                 "Content-Type": "application/json",

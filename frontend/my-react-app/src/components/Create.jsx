@@ -28,7 +28,7 @@ const   Create = () => {
 
     try {
       // Replace with your backend API URL
-      const response = await axios.post('http://localhost:5000/api/posts/create', formData, {
+      const response = await axios.post('https://instagramclone-19.onrender.com/create', formData, {
         headers: {
           'Content-Type': 'multipart/form-data', // Make sure to send the content type as form-data
         },

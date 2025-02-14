@@ -13,7 +13,7 @@ const singleUser = () => {
       const getProfile = async () => {
         try {
           const response = await axios.get(
-            `http://localhost:5000/api/users/getProfile/${userId}`,
+            `https://instagramclone-19.onrender.com/getProfile/${userId}`,
             {
               headers: {
                 "Content-Type": "application/json",

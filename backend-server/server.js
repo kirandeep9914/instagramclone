@@ -21,6 +21,7 @@ const allowedOrigins = [
   "http://localhost:5173",  // Local frontend
   "https://instagramclone-17.onrender.com",  // Previous deployment
   "https://instagramclone-18.onrender.com",  // Possible new deployment
+  "https://instagramclone-19.onrender.com",  // Possible new deployment
   "https://instagramclone-*.onrender.com"  // Future subdomains
 ];
 // Allow requests from specific origins
